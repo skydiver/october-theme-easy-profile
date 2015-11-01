@@ -1,0 +1,23 @@
+==
+<?php
+function onStart() {
+
+    $this['skills'] = [
+        'PHP MySQL'    => 70,
+        'UI/UX Design' => 85,
+        'Bootstrap'    => 95
+    ];
+
+}
+?>
+==
+<div class="skills">
+    <h2 class="white">Skills</h2>
+{% for skill,percent in skills %}
+    <strong>{{ skill }}</strong>
+    <span class="pull-right">{{ percent }}%</span>
+    <div class="progress">
+        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="{{ percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%;"></div>
+    </div>
+{% endfor %}
+</div>

@@ -1,0 +1,28 @@
+name: Easy Profile
+author: Martin M.
+description: Easy Profile is one-page Bootstrap layout. Fade in-out background images. Blue, green, orange, and gray color themes are included. Created by Templatemo.
+homepage: 'http://www.templatemo.com/tm-467-easy-profile'
+code: Easy-Profile
+form:
+    fields:
+        color:
+            label: Select theme color
+            type: dropdown
+            default: blue
+            options:
+                blue: Blue
+                gray: Gray
+                green: Green
+                orange: Orange
+        preloader:
+            label: Preloader delay
+            type: number
+            default: 1000
+        sliderduration:
+            label: Slider duration
+            type: number
+            default: 3200
+        sliderfade:
+            label: Slider fade
+            type: number
+            default: 1300

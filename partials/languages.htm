@@ -1,0 +1,22 @@
+==
+<?php
+function onStart() {
+
+    $this['languages'] = [
+        'Myanmar / Thai',
+        'English / Spanish',
+        'Chinese / Japanese',
+        'Arabic / Hebrew'
+    ];
+
+}
+?>
+==
+<div class="languages">
+    <h2>Languages</h2>
+        <ul>
+        {% for language in languages %}
+            <li>{{ language }}</li>
+        {% endfor %}
+        </ul>
+</div>

@@ -1,0 +1,81 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ this.page.title }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+<!--
+Easy Profile Template
+http://www.templatemo.com/tm-467-easy-profile
+-->
+    <link href="{{ [
+        'assets/css/bootstrap.min.css',
+        'assets/css/font-awesome.min.css',
+        ('assets/css/templatemo-' ~ (this.theme.color != '' ? this.theme.color : 'blue') ~ '.css')
+    ]|theme }}" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target=".navbar-collapse">
+
+    <div class="preloader">
+        <div class="sk-spinner sk-spinner-wordpress">
+           <span class="sk-inner-circle"></span>
+         </div>
+    </div>
+
+    {% partial 'header' %}
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">{% partial 'about'  %}</div>
+            <div class="col-md-6 col-sm-12">{% partial 'skills' %}</div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">{% partial 'education' %}</div>
+            <div class="col-md-4 col-sm-12">{% partial 'languages' %}</div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">{% partial 'contact'    %}</div>
+            <div class="col-md-8 col-sm-12">{% partial 'experience' %}</div>
+        </div>
+    </section>
+
+    {% partial 'footer' %}
+
+    <script src="{{ [
+        'assets/js/jquery.js',
+        'assets/js/bootstrap.min.js',
+        'assets/js/jquery.backstretch.min.js',
+        '@framework',
+        '@framework.extras']|theme }}"></script>
+
+    <script>
+        $(window).load(function(){
+            $('.preloader').delay({{ (this.theme.preloader != '' ? this.theme.preloader : 1000) }}).fadeOut("slow");
+        });
+
+        $(function(){
+            jQuery(document).ready(function() {
+                $('body').backstretch([
+                    "{{ 'assets/images/tm-bg-slide-1.jpg'|theme }}",
+                    "{{ 'assets/images/tm-bg-slide-2.jpg'|theme }}",
+                    "{{ 'assets/images/tm-bg-slide-3.jpg'|theme }}"
+                ], {duration: {{ (this.theme.sliderduration != '' ? this.theme.sliderduration : 3200) }}, fade: {{ (this.theme.sliderfade != '' ? this.theme.sliderfade : 1300) }}});
+            });
+        })
+    </script>
+
+    {% scripts %}
+
+</body>
+</html>
