@@ -5,6 +5,9 @@ homepage: 'http://www.templatemo.com/tm-467-easy-profile'
 code: Easy-Profile
 form:
     fields:
+        title:
+            label: Site title
+            default: Your site title
         color:
             label: Select theme color
             type: dropdown
